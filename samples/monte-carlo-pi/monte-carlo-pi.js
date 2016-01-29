@@ -20,7 +20,7 @@
  * var monte_carlo = require('samples/monte-carlo-pi').run;
  * monte_carlo(10000);
  */
-exports.run = function(n, done) {
+exports.run = function(n, callback) {
     // Given a circle of radius R = 1/2 and square of length L = 1, both
     // centered at the origin, estimate pi.
 
@@ -68,5 +68,5 @@ exports.run = function(n, done) {
     }
 
     var hitPct = nInsideCircle / n;
-    done(hitPct * 4);
+    callback(hitPct * 4);
 }
