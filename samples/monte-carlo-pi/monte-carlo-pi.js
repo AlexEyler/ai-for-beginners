@@ -1,4 +1,26 @@
-exports.run = function(n) {
+/**
+ * monte-carlo-pi module.
+ * @module samples/monte-carlo-pi
+ */
+
+/**
+ * Callback for completion of estimating pi.
+ *
+ * @callback estimationComplete
+ * @param {int} estimate - The estimated value of pi (a float).
+ */
+
+/**
+ * Estimate the value of pi.
+ * @param {int} n - The number of darts to throw
+ * @param {estimationComplete} callback - A callback with the esimate of pi.
+ *
+ * @example
+ * // prints a value close to pi
+ * var monte_carlo = require('samples/monte-carlo-pi').run;
+ * monte_carlo(10000);
+ */
+exports.run = function(n, done) {
     // Given a circle of radius R = 1/2 and square of length L = 1, both
     // centered at the origin, estimate pi.
 
@@ -46,7 +68,5 @@ exports.run = function(n) {
     }
 
     var hitPct = nInsideCircle / n;
-    var estimate = hitPct * 4;
-    console.log("Estimated pi value: ", hitPct * 4);
-    console.log("Accuracy (estimate - pi): ", (estimate - Math.PI));
+    done(hitPct * 4);
 }

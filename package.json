@@ -15,6 +15,6 @@
   "author": "Alex Eyler <alex.eyler@outlook.com>",
   "license": "MIT",
   "dependencies": {
-      "node-stopwatch": "*"
+    "node-stopwatch": "*"
   }
 }

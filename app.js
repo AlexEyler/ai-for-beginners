@@ -23,17 +23,17 @@ switch (sample) {
         }
 
         var n = parseInt(args[1], 10);
-        if (verbose) {
-            var stopwatch = Stopwatch.create();
-            stopwatch.start();
-            monte_carlo(n);
+        var stopwatch = Stopwatch.create();
+        monte_carlo(n, function(estimate) {
             stopwatch.stop();
-            console.log('Elapsed time: ' + stopwatch.elapsedMilliseconds + 'ms');
-        }
-        else {
-            monte_carlo(n);
-        }
 
+            console.log('Estimate value of pi: ', estimate);
+            console.log('Accuracy (estimate - pi): ', estimate - Math.PI);
+
+            if (verbose) {
+                console.log('Elapsed time: ' + stopwatch.elapsedMilliseconds + 'ms');
+            }
+        });
         break;
 
     default:
