@@ -1,0 +1,17 @@
+{
+  "name": "ai-for-beginners",
+  "version": "0.0.1",
+  "description": "Samples and libraries for artificial intelligence in node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "AI",
+    "artificial",
+    "intelligence",
+    "samples"
+  ],
+  "author": "Alex Eyler <alex.eyler@outlook.com>",
+  "license": "MIT"
+}
